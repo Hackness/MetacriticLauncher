@@ -1,5 +1,6 @@
 package launcher.data;
 
+import launcher.Util;
 import launcher.gui.MainController;
 import launcher.ThreadPoolManager;
 import launcher.parse.WebPage;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class DataManager {
     private static final String DIR = System.getenv("appdata") + "\\Hacknessdev\\MetacriticLauncher";
     private static final String DATA = DIR + "\\data";
+    private static final String BACKUP_DIR = DIR + "\\backup";
     @Getter
     private ArrayList<Game> data = new ArrayList<>();
 
@@ -89,6 +91,7 @@ public class DataManager {
             data = (ArrayList<Game>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            makeBackup("OnDeserializeFail");
         }
     }
 
@@ -121,4 +124,27 @@ public class DataManager {
             MainController.getInstance().refresh();
         }
     }
+
+    /**
+     * Makes backup of existing data file in new thread.
+     * @param name - name that will be used in backups name as header. Can be empty.
+     */
+    private void makeBackup(String name) {
+        ThreadPoolManager.getInstance().execute(() -> {
+            File file = new File(DATA);
+            if (!file.exists())
+                return;
+            try {
+                File backupDir = new File(BACKUP_DIR);
+                if (!backupDir.exists())
+                    Files.createDirectory(backupDir.toPath());
+                String fileName = BACKUP_DIR + "\\" + Util.makeFileNameWithDate(name, "");
+                Files.copy(file.toPath(), new File(fileName).toPath());
+                System.out.println("Backup created: " + fileName);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
 }
