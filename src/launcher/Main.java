@@ -1,12 +1,12 @@
 package launcher;
 
-import data.DataManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import launcher.data.DataManager;
 import launcher.gui.AddController;
 import launcher.gui.MainController;
 

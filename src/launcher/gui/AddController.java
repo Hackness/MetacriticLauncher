@@ -1,6 +1,6 @@
 package launcher.gui;
 
-import data.DataManager;
+import launcher.data.DataManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;

@@ -1,6 +1,6 @@
 package launcher.parse;
 
-import data.Game;
+import launcher.data.Game;
 import javafx.util.Pair;
 
 /**

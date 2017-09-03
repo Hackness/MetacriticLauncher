@@ -1,7 +1,7 @@
 package launcher.gui;
 
-import data.DataManager;
-import data.Game;
+import launcher.data.DataManager;
+import launcher.data.Game;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
@@ -15,9 +15,7 @@ import launcher.Main;
 import launcher.ThreadPoolManager;
 
 import java.awt.*;
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.ScheduledFuture;

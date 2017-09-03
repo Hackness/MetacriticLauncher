@@ -1,4 +1,4 @@
-package data;
+package launcher.data;
 
 import launcher.gui.MainController;
 import launcher.ThreadPoolManager;
