@@ -69,7 +69,7 @@ public class DataManager {
     /**
      * Serialize all inserted data to file
      */
-    private void serialize() {
+    public void serialize() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(DATA))) {
             out.writeObject(data);
         } catch (IOException e) {
@@ -107,8 +107,6 @@ public class DataManager {
     public void updateAllInfo() {
         MainController.getInstance().loading();
         data.forEach(g -> ThreadPoolManager.getInstance().execute(() -> updateInfo(g, false)));
-        serialize();
-        MainController.getInstance().refresh();
     }
 
     /**

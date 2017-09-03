@@ -95,11 +95,18 @@ public class MainController implements Initializable {
         });
     }
 
+    /**
+     * Refresh table elements by existing data
+     */
     public void refresh() {
         table.getItems().clear();
         table.getItems().addAll(DataManager.getInstance().getData());
     }
 
+    /**
+     * Makes loading indicator visible. Also starting a task that is checking count of an active threads.
+     * If there is no active threads, stopping the task, hiding indicator, storing and refreshing updated data
+     */
     public void loading() {
         if (!idc.isVisible())
             idc.setVisible(true);
@@ -108,6 +115,8 @@ public class MainController implements Initializable {
                 if (ThreadPoolManager.getInstance().activeCount() <= 1) {
                     idc.setVisible(false);
                     loadingTask.cancel(false);
+                    DataManager.getInstance().serialize();
+                    refresh();
                 }
             }, 100, 100);
     }
