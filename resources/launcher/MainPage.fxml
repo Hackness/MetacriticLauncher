@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="table" focusTraversable="false" prefHeight="557.0" prefWidth="870.0">
+        <columns>
+            <TableColumn fx:id="imageCol" prefWidth="69.0" text="Cover" />
+          <TableColumn fx:id="nameCol" minWidth="100.0" prefWidth="206.0" text="Name" />
+          <TableColumn fx:id="ratingCol" prefWidth="57.0" text="Rating" />
+            <TableColumn fx:id="userScoreCol" prefWidth="48.0" text="User" />
+            <TableColumn fx:id="releaseCol" prefWidth="97.0" text="Release" />
+            <TableColumn fx:id="genreCol" prefWidth="296.0" text="Genre" />
+            <TableColumn fx:id="idCol" prefWidth="33.0" text="id" />
+            <TableColumn fx:id="removeCol" prefWidth="48.0" />
+        </columns>
+      </TableView>
+      <Button fx:id="addBtn" layoutX="13.0" layoutY="565.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="60.0" text="Add" />
+      <Button fx:id="refreshBtn" layoutX="81.0" layoutY="565.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="60.0" text="Refresh" />
+      <Label layoutX="795.0" layoutY="570.0" text="Threads:" />
+      <Label fx:id="thNum" layoutX="843.0" layoutY="570.0" text="0" />
+      <ProgressIndicator fx:id="idc" layoutX="156.0" layoutY="565.0" prefHeight="28.0" prefWidth="29.0" progress="0.0" />
+   </children>
+</AnchorPane>

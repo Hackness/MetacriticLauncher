@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="102.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="url" layoutX="16.0" layoutY="32.0" prefHeight="25.0" prefWidth="364.0" />
+      <Label layoutX="16.0" layoutY="14.0" text="Insert the game link:" />
+      <Button fx:id="okBtn" layoutX="268.0" layoutY="66.0" mnemonicParsing="false" prefWidth="52.0" text="Ok" />
+      <Button fx:id="cancelBtn" layoutX="328.0" layoutY="66.0" mnemonicParsing="false" text="Cancel" />
+   </children>
+</AnchorPane>
